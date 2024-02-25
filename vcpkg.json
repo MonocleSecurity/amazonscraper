@@ -1,0 +1,21 @@
+{
+  "name": "amazonscraper",
+  "version-string": "0.1",
+  "dependencies": [
+    {
+      "name": "boost-beast"
+    },
+    {
+      "name": "boost-iostreams"
+    },
+    {
+      "name": "boost-regex"
+    },
+    {
+      "name": "openssl"
+    },
+    {
+      "name": "pugixml"
+    }
+  ]
+}
