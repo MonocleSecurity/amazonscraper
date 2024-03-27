@@ -12,6 +12,9 @@
       "name": "boost-regex"
     },
     {
+      "name": "libxml2"
+    },
+    {
       "name": "openssl"
     },
     {

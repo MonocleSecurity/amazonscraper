@@ -5,6 +5,7 @@ set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems
 project(amazonscraper)
 
 find_package(Boost REQUIRED COMPONENTS iostreams regex)
+find_package(LibXml2 REQUIRED)
 find_package(OpenSSL REQUIRED)
 find_package(pugixml CONFIG REQUIRED)
 
@@ -22,7 +23,9 @@ endif()
 
 add_executable(amazonscraper
 main.hpp
-main.cpp)
+main.cpp
+parse.hpp
+parse.cpp)
 
 set_property(TARGET amazonscraper PROPERTY CXX_STANDARD 20)
 
@@ -34,5 +37,6 @@ include_directories(amazonscraper .)
 
 target_link_libraries(amazonscraper PRIVATE Boost::regex)
 target_link_libraries(amazonscraper PRIVATE Boost::iostreams)
+target_link_libraries(amazonscraper PRIVATE LibXml2::LibXml2)
 target_link_libraries(amazonscraper PRIVATE OpenSSL::SSL OpenSSL::Crypto)
 target_link_libraries(amazonscraper PRIVATE pugixml::shared pugixml::pugixml)
